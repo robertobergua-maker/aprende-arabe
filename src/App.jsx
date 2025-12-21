@@ -23,9 +23,9 @@ const INITIAL_DATA = [
   { id: 106, category: "Pista 1: Saludos", spanish: "Y con vosotros la paz", arabic: "وعليكم السلام", phonetic: "Wa alaykumu as-salam" },
 
   // Pista 2: Despedidas
-{ id: 738492, category: "Despedidas", spanish: "Adiós", arabic: "مع السلامة", phonetic: "maʿa as-salāma" },
-{ id: 915374, category: "Despedidas", spanish: "Hasta la vista", arabic: "إلى اللقاء", phonetic: "ilā al-liqāʾ" },
-{ id: 264981, category: "Despedidas", spanish: "Hasta la vista / Adiós (respuesta)", arabic: "إلى اللقاء / مع السلامة", phonetic: "ilā al-liqāʾ / maʿa as-salāma" },
+{ id: 738492, category: "Pista 2:Despedidas", spanish: "Adiós", arabic: "مع السلامة", phonetic: "maʿa as-salāma" },
+{ id: 915374, category: "Pista 2:Despedidas", spanish: "Hasta la vista", arabic: "إلى اللقاء", phonetic: "ilā al-liqāʾ" },
+{ id: 264981, category: "Pista 2:Despedidas", spanish: "Hasta la vista / Adiós (respuesta)", arabic: "إلى اللقاء / مع السلامة", phonetic: "ilā al-liqāʾ / maʿa as-salāma" },
 
   // Pista 3: ¿Cómo estás?
 { id: 582913, category: "Cómo estás", spanish: "¿Cómo estás? / ¿Qué tal?", arabic: "كيف الحال؟", phonetic: "kayfa al-ḥāl?" },
@@ -33,8 +33,7 @@ const INITIAL_DATA = [
 { id: 739105, category: "Cómo estás", spanish: "Bien", arabic: "لا بأس", phonetic: "lā baʾs" },
 { id: 860274, category: "Cómo estás", spanish: "Bien, gracias a Dios", arabic: "الحمد لله", phonetic: "al-ḥamdu lillāh" },
 { id: 317496, category: "Cómo estás", spanish: "Bien, gracias a Dios (respuesta larga)", arabic: "بخير والحمد لله", phonetic: "bijayr wa-l-ḥamdu lillāh" },
-{ id: 925781, category: "Cómo estás", spanish: "Bien, gracias a Dios (respuesta larga)", arabic: "لا بأس والحمد لله", phonetic: "lā baʾs wa-l-ḥamdu lillāh" }
-,
+{ id: 925781, category: "Cómo estás", spanish: "Bien, gracias a Dios (respuesta larga)", arabic: "لا بأس والحمد لله", phonetic: "lā baʾs wa-l-ḥamdu lillāh" },
 
   // Pista 4: Pronombres personales
 { id: 504918, category: "Pronombres personales", spanish: "Yo", arabic: "أنا", phonetic: "anā" },
