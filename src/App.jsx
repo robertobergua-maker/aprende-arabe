@@ -23,8 +23,9 @@ const INITIAL_DATA = [
   { id: 106, category: "Pista 1: Saludos", spanish: "Y con vosotros la paz", arabic: "وعليكم السلام", phonetic: "Wa alaykumu as-salam" },
 
   // Pista 2: Despedidas
-  { id: 201, category: "Pista 2: Despedidas", spanish: "Adiós", arabic: "مع السلامة", phonetic: "Ma'a as-salama" },
-  { id: 202, category: "Pista 2: Despedidas", spanish: "Hasta la vista", arabic: "إلى اللقاء", phonetic: "Ila al-liqa'" },
+{ id: 738492, category: "Despedidas", spanish: "Adiós", arabic: "مع السلامة", phonetic: "maʿa as-salāma" },
+{ id: 915374, category: "Despedidas", spanish: "Hasta la vista", arabic: "إلى اللقاء", phonetic: "ilā al-liqāʾ" },
+{ id: 264981, category: "Despedidas", spanish: "Hasta la vista / Adiós (respuesta)", arabic: "إلى اللقاء / مع السلامة", phonetic: "ilā al-liqāʾ / maʿa as-salāma" },
 
   // Pista 3: ¿Cómo estás?
   { id: 301, category: "Pista 3: ¿Cómo estás?", spanish: "¿Cómo estás?", arabic: "كيف الحال؟", phonetic: "Kayfa al-hal?" },
