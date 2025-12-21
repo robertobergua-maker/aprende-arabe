@@ -168,12 +168,13 @@ const INITIAL_DATA = [
   { id: 3110, category: "Pista 31: Cuerpo", spanish: "Guapo", arabic: "وسيم", phonetic: "Wasim" }
 ];
 
+
 export default function App() {
   // --- ESTADOS ---
   const [cards, setCards] = useState(() => {
     try {
-      // Uso una nueva clave 'v4' para resetear datos antiguos que pudieran dar error
-      const saved = localStorage.getItem('flashcards-data-v4');
+      // HEMOS CAMBIADO A 'v5' PARA FORZAR LA ACTUALIZACIÓN EN VERCEL
+      const saved = localStorage.getItem('flashcards-data-v5');
       return saved ? JSON.parse(saved) : INITIAL_DATA;
     } catch (e) {
       console.error("Error cargando datos, reseteando...", e);
@@ -214,7 +215,8 @@ export default function App() {
   // --- EFECTOS ---
   useEffect(() => {
     try {
-      localStorage.setItem('flashcards-data-v4', JSON.stringify(cards));
+      // HEMOS CAMBIADO A 'v5' PARA GUARDAR LOS DATOS NUEVOS
+      localStorage.setItem('flashcards-data-v5', JSON.stringify(cards));
     } catch (e) {
       console.error("Error guardando en localStorage", e);
     }
@@ -562,4 +564,3 @@ function ImportModal({ onClose, onImport }) {
       </div>
     </div>
   );
-}
