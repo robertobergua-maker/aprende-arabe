@@ -12,7 +12,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 
-// --- DATOS COMPLETOS ---
+// --- DATOS COMPLETOS (FORMATO CORREGIDO) ---
 const INITIAL_DATA = [
   // Pista 1: Saludos
   { id: 101, category: "Pista 1: Saludos", spanish: "Hola", arabic: "مرحبا", phonetic: "Marhaban" },
@@ -127,7 +127,7 @@ const INITIAL_DATA = [
   { id: 2301, category: "Pista 23: La Familia", spanish: "Familia", arabic: "عائلة", phonetic: "'Aila" },
   { id: 2302, category: "Pista 23: La Familia", spanish: "Padre", arabic: "أب", phonetic: "Ab" },
   { id: 2303, category: "Pista 23: La Familia", spanish: "Madre", arabic: "أم", phonetic: "Umm" },
-  { id: 2304, category: "Pista 23: La Familia", spanish: "Hijo", arabic: "ابn", phonetic: "Ibn" },
+  { id: 2304, category: "Pista 23: La Familia", spanish: "Hijo", arabic: "ابن", phonetic: "Ibn" },
   { id: 2305, category: "Pista 23: La Familia", spanish: "Hija", arabic: "ابنة", phonetic: "Ibna" },
   { id: 2306, category: "Pista 23: La Familia", spanish: "Hermano", arabic: "أخ", phonetic: "Akh" },
   { id: 2307, category: "Pista 23: La Familia", spanish: "Hermana", arabic: "أخت", phonetic: "Ukht" },
@@ -169,6 +169,7 @@ export default function App() {
   // --- ESTADOS ---
   const [cards, setCards] = useState(() => {
     try {
+      // ACTUALIZADO A v6 PARA RECARGAR DATOS LIMPIOS
       const saved = localStorage.getItem('flashcards-data-v6');
       return saved ? JSON.parse(saved) : INITIAL_DATA;
     } catch (e) {
@@ -181,7 +182,9 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const [isImporting, setIsImporting] = useState(false);
-  const [frontLanguage, setFrontLanguage] = useState("spanish");
+  
+  // ESTADO NUEVO: Controla qué idioma se muestra al frente
+  const [frontLanguage, setFrontLanguage] = useState("spanish"); // "spanish" | "arabic"
 
   // --- DERIVADOS ---
   const categories = useMemo(() => {
@@ -353,7 +356,7 @@ export default function App() {
                 <p className="text-lg font-medium">No se encontraron tarjetas.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6 pb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
                 {filteredCards.map(card => (
                   <Flashcard key={card.id} data={card} frontLanguage={frontLanguage} />
                 ))}
@@ -428,14 +431,14 @@ function Flashcard({ data, frontLanguage }) {
   const renderSpanishContent = () => (
     <div className="animate-fade-in-up w-full">
         <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-2">Español</p>
-        <h3 className="text-lg md:text-xl font-bold leading-tight break-words">{data.spanish || "?"}</h3>
+        <h3 className="text-xl font-bold leading-tight break-words">{data.spanish || "?"}</h3>
     </div>
   );
 
   const renderArabicContent = () => (
     <div className="animate-fade-in-up w-full">
         <p className="text-[10px] uppercase tracking-widest text-emerald-600/60 font-bold mb-2">Árabe</p>
-        <h3 className="text-2xl md:text-3xl font-arabic mb-4 break-words" dir="rtl">{data.arabic || "..."}</h3>
+        <h3 className="text-3xl font-arabic mb-4 break-words" dir="rtl">{data.arabic || "..."}</h3>
         <button 
             onClick={playAudio}
             className="mx-auto flex items-center gap-2 px-3 py-1.5 bg-emerald-200/50 hover:bg-emerald-200 rounded-full text-xs font-bold uppercase tracking-wide text-emerald-800 transition active:scale-95"
@@ -448,7 +451,7 @@ function Flashcard({ data, frontLanguage }) {
   const renderPhoneticContent = () => (
     <div className="animate-fade-in-up w-full">
         <p className="text-[10px] uppercase tracking-widest text-amber-600/60 font-bold mb-2">Fonética</p>
-        <h3 className="text-base md:text-lg font-mono text-amber-800 italic break-words">{data.phonetic || "-"}</h3>
+        <h3 className="text-lg font-mono text-amber-800 italic break-words">{data.phonetic || "-"}</h3>
         <p className="mt-3 text-[10px] opacity-50 flex items-center justify-center gap-1">
             <Mic className="w-3 h-3" /> Pronunciación
         </p>
@@ -474,7 +477,7 @@ function Flashcard({ data, frontLanguage }) {
   return (
     <div 
       onClick={handleNextFace}
-      className={`relative h-40 md:h-60 w-full rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer border flex flex-col items-center justify-center p-2 md:p-4 text-center select-none group ${getCardStyle()}`}
+      className={`relative h-60 w-full rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer border flex flex-col items-center justify-center p-4 text-center select-none group ${getCardStyle()}`}
     >
       <div className="absolute top-3 right-3 flex gap-1.5">
         {[0, 1, 2].map(step => (
