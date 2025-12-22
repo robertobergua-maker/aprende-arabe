@@ -118,7 +118,7 @@ const INITIAL_DATA = [
 { id: 856291, category: "Pista 9: Los pronombres sufijados", spanish: "Nuestro, nuestra", arabic: "ـنَا", phonetic: "-na" },
 { id: 412389, category: "Pista 9: Los pronombres sufijados", spanish: "Vuestro (de vosotros)", arabic: "ـكُمْ", phonetic: "-kum" },
 { id: 678452, category: "Pista 9: Los pronombres sufijados", spanish: "Vuestro (de vosotras)", arabic: "ـكُنَّ", phonetic: "-kunna" },
-{ id: 193847, category: "Pista 9: Los pronombres sufijados", spanish: "Su (de ellos)", arabic: "ـهُمْ", phonetic: "-hum" },
+{ id: 193999, category: "Pista 9: Los pronombres sufijados", spanish: "Su (de ellos)", arabic: "ـهُمْ", phonetic: "-hum" }, /* ID CORREGIDO (era 193847) */
 { id: 504938, category: "Pista 9: Los pronombres sufijados", spanish: "Su (de ellas)", arabic: "ـهُنَّ", phonetic: "-hunna" },
 { id: 284756, category: "Pista 9: Los pronombres sufijados", spanish: "Mi libro", arabic: "كِتَابِي", phonetic: "Kitabi" },
 { id: 935612, category: "Pista 9: Los pronombres sufijados", spanish: "Tu libro (masc.)", arabic: "كِتَابُكَ", phonetic: "Kitabuka" },
@@ -158,11 +158,11 @@ const INITIAL_DATA = [
 { id: 443920, category: "Pista 11: Concordancias entre sustantivo y adjetivo", spanish: "Ésta es una pelota grande", arabic: "هَذِهِ كُرَةٌ كَبِيرَةٌ", phonetic: "Hadhihi kuratun kabira" },
 
 // Pista 12: La anexión
-{ id: 482915, category: "Pista 12: La anexión", spanish: "Mi libro", arabic: "كِتَابِي", phonetic: "Kitabi" },
+{ id: 482991, category: "Pista 12: La anexión", spanish: "Mi libro", arabic: "كِتَابِي", phonetic: "Kitabi" }, /* ID CORREGIDO (era 482915) */
 { id: 739284, category: "Pista 12: La anexión", spanish: "Tu libro (masc.)", arabic: "كِتَابُكَ", phonetic: "Kitabuka" },
-{ id: 192837, category: "Pista 12: La anexión", spanish: "Su libro (de él)", arabic: "كِتَابُهُ", phonetic: "Kitabuhu" },
+{ id: 192992, category: "Pista 12: La anexión", spanish: "Su libro (de él)", arabic: "كِتَابُهُ", phonetic: "Kitabuhu" }, /* ID CORREGIDO (era 192837) */
 { id: 567382, category: "Pista 12: La anexión", spanish: "El libro del profesor", arabic: "كِتَابُ الْأُسْتَاذِ", phonetic: "Kitabu l-ustadh" },
-{ id: 918276, category: "Pista 12: La anexión", spanish: "Su libro grande", arabic: "كِتَابُهُ الْكَبِيرُ", phonetic: "Kitabuhu l-kabir" },
+{ id: 918993, category: "Pista 12: La anexión", spanish: "Su libro grande", arabic: "كِتَابُهُ الْكَبِيرُ", phonetic: "Kitabuhu l-kabir" }, /* ID CORREGIDO (era 918276) */
 { id: 339105, category: "Pista 12: La anexión", spanish: "Su libro es grande", arabic: "كِتَابُهُ كَبِيرٌ", phonetic: "Kitabuhu kabir" },
 { id: 884723, category: "Pista 12: La anexión", spanish: "El libro grande del profesor", arabic: "كِتَابُ الْأُسْتَاذِ الْكَبِيرُ", phonetic: "Kitabu l-ustadhi l-kabir" },
 { id: 221938, category: "Pista 12: La anexión", spanish: "El libro del profesor es grande", arabic: "كِتَابُ الْأُسْتَاذِ كَبِيرٌ", phonetic: "Kitabu l-ustadhi kabir" },
@@ -710,8 +710,8 @@ export default function App() {
   const [cards, setCards] = useState(() => {
     try {
       // IMPORTANTE: Cambio a 'v7' para forzar la carga de los nuevos datos con vocales
-      const saved = localStorage.getItem('flashcards-data-v8');
-      return saved ? JSON.parse(saved) : INITIAL_DATA;
+      const saved = localStorage.getItem('flashcards-data-v9'); // <--- AQUI
+    return saved ? JSON.parse(saved) : INITIAL_DATA;
     } catch (e) {
       console.error("Error cargando datos, reseteando...", e);
       return INITIAL_DATA;
@@ -753,7 +753,7 @@ export default function App() {
   // --- EFECTOS ---
   useEffect(() => {
     try {
-      localStorage.setItem('flashcards-data-v8', JSON.stringify(cards));
+      localStorage.setItem('flashcards-data-v9', JSON.stringify(cards));
     } catch (e) {
       console.error("Error guardando en localStorage", e);
     }
