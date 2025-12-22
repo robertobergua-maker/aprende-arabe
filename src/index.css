@@ -17,3 +17,11 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #94a3b8;
 }
+.arabic-text {
+  font-family: 'Noto Naskh Arabic', serif; /* Usa la fuente que descargamos arriba */
+  direction: rtl;       /* Obligatorio: Dirección derecha a izquierda */
+  font-size: 2.2rem;    /* Tamaño grande (ajústalo si quieres: 2.0, 2.5, etc) */
+  line-height: 1.6;     /* Espacio entre líneas para que no se pisen los acentos */
+  font-weight: 500;     /* Un poquito más gruesa para que se vea bien */
+  text-align: center;   /* Centrado */
+}
