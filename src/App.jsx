@@ -1005,7 +1005,17 @@ function Flashcard({ data, frontLanguage, showDiacritics }) {
     return (
       <div className="animate-fade-in-up w-full">
           <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-emerald-600/60 font-bold mb-1 md:mb-2">Árabe</p>
-          <h3 className="text-xl md:text-3xl font-arabic mb-2 md:mb-4 break-words" dir="rtl">{displayText || "..."}</h3>
+          <h3 
+  className="text-xl md:text-3xl mb-2 md:mb-4 break-words" 
+  dir="rtl"
+  style={{ 
+    fontFamily: "'Noto Naskh Arabic', serif", 
+    lineHeight: '2',        /* Más altura para que los acentos no choquen */
+    fontWeight: '600'       /* Un poco más gordita para legibilidad */
+  }}
+>
+  {displayText || "..."}
+</h3>
           <button 
               onClick={playAudio}
               className="mx-auto flex items-center gap-2 px-2 py-1 md:px-3 md:py-1.5 bg-emerald-200/50 hover:bg-emerald-200 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide text-emerald-800 transition active:scale-95"
