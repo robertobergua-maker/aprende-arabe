@@ -710,7 +710,7 @@ export default function App() {
   const [cards, setCards] = useState(() => {
     try {
       // IMPORTANTE: Cambio a 'v7' para forzar la carga de los nuevos datos con vocales
-      const saved = localStorage.getItem('flashcards-data-v7');
+      const saved = localStorage.getItem('flashcards-data-v8');
       return saved ? JSON.parse(saved) : INITIAL_DATA;
     } catch (e) {
       console.error("Error cargando datos, reseteando...", e);
@@ -753,7 +753,7 @@ export default function App() {
   // --- EFECTOS ---
   useEffect(() => {
     try {
-      localStorage.setItem('flashcards-data-v7', JSON.stringify(cards));
+      localStorage.setItem('flashcards-data-v8', JSON.stringify(cards));
     } catch (e) {
       console.error("Error guardando en localStorage", e);
     }
