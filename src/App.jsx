@@ -175,7 +175,7 @@ const INITIAL_DATA = [
 { id: 284731, category: "Pista 12: La anexión", spanish: "Su pelota grande", arabic: "كُرَتُهُ الْكَبِيرَةُ", phonetic: "Kuratuhu l-kabira" },
 { id: 628379, category: "Pista 12: La anexión", spanish: "Su pelota es grande", arabic: "كُرَتُهُ كَبِيرَةٌ", phonetic: "Kuratuhu kabira" },
 { id: 374821, category: "Pista 12: La anexión", spanish: "La pelota grande del niño", arabic: "كُرَةُ الْوَلَدِ الْكَبِيرَةُ", phonetic: "Kuratu l-waladi l-kabira" },
-{ id: 859134, category: "Pista 12: La anexión", spanish: "La pelota del niño es grande", arabic: "كُرَةُ الْوَلَدِ كَبِيرَةٌ", phonetic: "Kuratu l-waladi kabira" },كِتَابِي
+{ id: 859134, category: "Pista 12: La anexión", spanish: "La pelota del niño es grande", arabic: "كُرَةُ الْوَلَدِ كَبِيرَةٌ", phonetic: "Kuratu l-waladi kabira" },
 
   // Pista 20: La Casa
   { id: 2001, category: "Pista 20: La Casa", spanish: "Casa", arabic: "بَيْت", phonetic: "Bayt" },
